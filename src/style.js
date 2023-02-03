@@ -14,7 +14,5 @@ export const StyleApp = styled.div`
 
     padding: 0 115px;
     margin-top: 30px;
-
-    border: 1px solid black;
   }
 `;

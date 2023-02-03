@@ -3,11 +3,14 @@ import { Logo } from "./Logo";
 import { InputSearch } from "./InputSearch";
 import { StyleHeader } from "./style";
 
-const Header = () => {
+const Header = ({ products, setFilteredProducts }) => {
   return (
     <StyleHeader>
       <Logo />
-      <InputSearch />
+      <InputSearch
+        products={products}
+        setFilteredProducts={setFilteredProducts}
+      />
     </StyleHeader>
   );
 };

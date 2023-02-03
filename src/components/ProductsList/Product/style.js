@@ -2,17 +2,26 @@ import styled from "styled-components";
 
 export const StyleProduct = styled.div`
   border: 2px solid var(--gray-20);
+  border-radius: 5px;
+
+  width: 300px;
+  height: 346px;
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 
   div {
-    padding: 0 42px;
+    width: 300px;
+    height: 150px;
+
     background-color: var(--gray-0);
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
     img {
       object-fit: contain;
-      object-position: center;
     }
   }
   h1 {
@@ -55,5 +64,10 @@ export const StyleProduct = styled.div`
     border-radius: 8px;
 
     cursor: pointer;
+  }
+  button:hover {
+    background-color: var(--color-primary-50);
+    border: 2px solid var(--color-primary-50);
+    color: #ffffff;
   }
 `;
