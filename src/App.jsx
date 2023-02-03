@@ -1,21 +1,19 @@
-import { Resets } from "./styles/resets";
-import { Styleguide } from "./styles/styleguide";
-
-import { Header } from "./components/Header/Header";
-import ProductsList from "./components/ProductsList/ProductsList";
-import Cart from "./components/Cart/Cart";
+import { GlobalStyle } from "./styles/GlobalStyle";
+import { StyleApp } from "./style";
+import Header from "./components/Header";
+import ProductsList from "./components/ProductsList";
+import Cart from "./components/Cart";
 
 function App() {
   return (
-    <>
-      <Header></Header>
+    <StyleApp>
+      <Header />
       <section>
         <ProductsList />
         <Cart />
       </section>
-      <Resets />
-      <Styleguide />
-    </>
+      <GlobalStyle />
+    </StyleApp>
   );
 }
 

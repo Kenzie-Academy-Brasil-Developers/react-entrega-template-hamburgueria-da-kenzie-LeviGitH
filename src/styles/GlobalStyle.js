@@ -5,7 +5,24 @@ import { createGlobalStyle } from "styled-components";
    License: none (public domain)
 */
 
-export const Resets = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
+    :root{
+        --color-primary: #27AE60;
+        --color-primary-50: #93D7AF;
+        --color-secondary: #EB5757;
+
+        --gray-100: #333333;
+        --gray-50: #828282;
+        --gray-20: #E0E0E0;
+        --gray-0: #F5F5F5;
+
+        --negative: #E60000;
+        --warning: #FFCD07;
+        --success: #168821;
+        --information: #155BCB;
+    }
+
+
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
@@ -49,3 +66,4 @@ export const Resets = createGlobalStyle`
         border-spacing: 0;
     }
 `;
+// font-family: 'Inter', sans-serif;
