@@ -5,7 +5,7 @@ export const InputSearch = () => {
   return (
     <StyleInputSearch>
       <input type="search" placeholder="Digitar Pesquisa" />;
-      <button>Pesquisar</button>
+      <button type="submit">Pesquisar</button>
     </StyleInputSearch>
   );
 };

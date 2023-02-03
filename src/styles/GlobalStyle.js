@@ -65,5 +65,7 @@ export const GlobalStyle = createGlobalStyle`
         border-collapse: collapse;
         border-spacing: 0;
     }
+    * {
+        font-family: 'Inter', sans-serif;
+    }
 `;
-// font-family: 'Inter', sans-serif;
