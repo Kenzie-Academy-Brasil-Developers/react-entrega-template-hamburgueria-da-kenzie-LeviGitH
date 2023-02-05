@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const StyleApp = styled.div`
-  width: 100vw;
+  max-width: 100vw;
 
   display: flex;
   flex-wrap: wrap;
+  overflow-x: hidden;
 
   section {
     display: flex;

@@ -19,7 +19,7 @@ export const StyleCart = styled.div`
       color: #ffffff;
     }
   }
-  div {
+  .emptyCart {
     height: 22vh;
 
     background-color: var(--gray-0);
@@ -41,5 +41,22 @@ export const StyleCart = styled.div`
       font-size: 14px;
       color: var(--gray-50);
     }
+  }
+  .fullCart {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 363px;
+    height: 320px;
+
+    background-color: var(--gray-0);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    overflow-y: auto;
   }
 `;

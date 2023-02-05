@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleProduct } from "./style";
 
-export const Product = ({ product }) => {
+export const Product = ({ product, handleClick }) => {
   return (
     <StyleProduct>
       <div>
@@ -9,8 +9,10 @@ export const Product = ({ product }) => {
       </div>
       <h1>{product.name}</h1>
       <span>{product.category}</span>
-      <h2>R$ 14.00</h2>
-      <button type="button">Adicionar</button>
+      <h2>R$ {product.price}</h2>
+      <button type="button" onClick={handleClick} id={product.id}>
+        Adicionar
+      </button>
     </StyleProduct>
   );
 };
