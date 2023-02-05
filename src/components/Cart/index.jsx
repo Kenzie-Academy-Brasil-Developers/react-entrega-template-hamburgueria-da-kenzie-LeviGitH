@@ -3,11 +3,10 @@ import { StyleCart } from "./style";
 import { CartProduct } from "./CartProduct";
 import { CartTotal } from "./CartTotal";
 
-const Cart = ({ products, currentSale }) => {
+const Cart = ({ products, currentSale, cartTotal }) => {
   const cartProducts = products.filter((product) =>
     currentSale.includes("" + product.id)
   );
-
   return (
     <StyleCart>
       <header>
@@ -20,7 +19,7 @@ const Cart = ({ products, currentSale }) => {
               return <CartProduct key={index} product={product} />;
             })}
           </section>
-          <CartTotal />
+          <CartTotal cartTotal={cartTotal} />
         </div>
       ) : (
         <div className="emptyCart">

@@ -27,13 +27,20 @@ function App() {
     if (currentSale.some((element) => element == event.target.id)) {
       console.log("Já existe");
     } else {
+      const price = Number(event.target.attributes.price.value);
       setCurrentSale((oldArray) => [...oldArray, event.target.id]);
+      setCartTotal(cartTotal + price);
+      console.log(cartTotal);
     }
   };
 
   return (
     <StyleApp>
-      <Header products={products} setFilteredProducts={setFilteredProducts} />
+      <Header
+        products={products}
+        setFilteredProducts={setFilteredProducts}
+        cartTotal={cartTotal}
+      />
       <section>
         <ProductsList
           products={products}
