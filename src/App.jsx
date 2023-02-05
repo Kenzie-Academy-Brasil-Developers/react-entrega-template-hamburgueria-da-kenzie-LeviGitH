@@ -40,6 +40,7 @@ function App() {
         products={products}
         setFilteredProducts={setFilteredProducts}
         cartTotal={cartTotal}
+        setCurrentSale={setCurrentSale}
       />
       <section>
         <ProductsList
