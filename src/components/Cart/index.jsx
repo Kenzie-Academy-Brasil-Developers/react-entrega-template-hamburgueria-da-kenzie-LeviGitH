@@ -3,10 +3,13 @@ import { StyleCart } from "./style";
 import { CartProduct } from "./CartProduct";
 import { CartTotal } from "./CartTotal";
 
-const Cart = ({ products, currentSale, cartTotal, setCurrentSale }) => {
+const Cart = ({ products, currentSale, cartTotal }) => {
   const cartProducts = products.filter((product) =>
     currentSale.includes("" + product.id)
   );
+  const cartValues = cartProducts.map((product) => {
+    return product.price;
+  });
   return (
     <StyleCart>
       <header>
@@ -21,12 +24,11 @@ const Cart = ({ products, currentSale, cartTotal, setCurrentSale }) => {
                   key={index}
                   product={product}
                   currentSale={currentSale}
-                  setCurrentSale={setCurrentSale}
                 />
               );
             })}
           </section>
-          <CartTotal cartTotal={cartTotal} />
+          <CartTotal cartValues={cartValues} />
         </div>
       ) : (
         <div className="emptyCart">

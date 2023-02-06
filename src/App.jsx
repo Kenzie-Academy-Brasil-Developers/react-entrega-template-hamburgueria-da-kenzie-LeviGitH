@@ -29,8 +29,6 @@ function App() {
     } else {
       const price = Number(event.target.attributes.price.value);
       setCurrentSale((oldArray) => [...oldArray, event.target.id]);
-      setCartTotal(cartTotal + price);
-      console.log(cartTotal);
     }
   };
 
@@ -40,7 +38,6 @@ function App() {
         products={products}
         setFilteredProducts={setFilteredProducts}
         cartTotal={cartTotal}
-        setCurrentSale={setCurrentSale}
       />
       <section>
         <ProductsList
