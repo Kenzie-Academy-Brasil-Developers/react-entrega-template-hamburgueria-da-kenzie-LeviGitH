@@ -11,9 +11,15 @@ export const StyleApp = styled.div`
     display: flex;
     justify-content: space-between;
 
-    width: 100vw;
+    max-width: 100vw;
 
     padding: 0 115px;
     margin-top: 30px;
+  }
+  @media (max-width: 915px) {
+    section {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 `;
