@@ -10,14 +10,17 @@ export const StyleApp = styled.div`
   section {
     display: flex;
     justify-content: space-between;
+    align-items: start;
+    justify-content: center;
 
-    max-width: 100vw;
+    width: 100vw;
 
     padding: 0 115px;
     margin-top: 30px;
   }
-  @media (max-width: 915px) {
+  @media (max-width: 934px) {
     section {
+      align-items: center;
       flex-direction: column;
       gap: 20px;
     }

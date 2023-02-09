@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleCartProduct } from "./style";
 
-export const CartProduct = ({ product, currentSale }) => {
+export const CartProduct = ({ product, currentSale, setCurrentSale }) => {
   return (
     <StyleCartProduct className="productCart">
       <div className="productDiv__Perfil">
@@ -13,7 +13,20 @@ export const CartProduct = ({ product, currentSale }) => {
           <span>{product.category}</span>
         </div>
       </div>
-      <button>Remover</button>
+      <button
+        onClick={() => {
+          setCurrentSale(
+            currentSale.filter((value) => {
+              if (value == product.id) {
+              } else {
+                return value;
+              }
+            })
+          );
+        }}
+      >
+        Remover
+      </button>
     </StyleCartProduct>
   );
 };

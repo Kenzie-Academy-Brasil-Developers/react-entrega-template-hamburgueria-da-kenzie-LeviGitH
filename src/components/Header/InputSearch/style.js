@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const StyleInputSearch = styled.div`
-  max-width: 100%;
-  width: fit-content;
-  padding: 5px 0;
+  max-width: 365px;
+  padding: 5px 10px;
 
   display: flex;
 

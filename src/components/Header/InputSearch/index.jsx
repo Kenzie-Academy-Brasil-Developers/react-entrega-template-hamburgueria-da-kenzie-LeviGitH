@@ -13,7 +13,6 @@ export const InputSearch = ({ products, setFilteredProducts }) => {
           setFilterword(event.target.value);
         }}
       />
-      ;
       <button
         type="submit"
         onClick={() => {

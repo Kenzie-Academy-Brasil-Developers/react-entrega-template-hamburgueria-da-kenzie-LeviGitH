@@ -5,12 +5,13 @@ import ProductsList from "./components/ProductsList";
 import Cart from "./components/Cart";
 import { useEffect, useState } from "react";
 import { api } from "./services/api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
     async function loadHamburgueriaData() {
@@ -25,29 +26,42 @@ function App() {
   });
   const handleClick = (event) => {
     if (currentSale.some((element) => element == event.target.id)) {
-      console.log("Já existe");
+      toast.error("Produto já está no carrinho!");
     } else {
-      const price = Number(event.target.attributes.price.value);
       setCurrentSale((oldArray) => [...oldArray, event.target.id]);
     }
   };
 
   return (
     <StyleApp>
-      <Header
-        products={products}
-        setFilteredProducts={setFilteredProducts}
-        cartTotal={cartTotal}
-      />
+      <Header products={products} setFilteredProducts={setFilteredProducts} />
       <section>
         <ProductsList
           products={products}
           filteredProducts={filteredProducts}
           handleClick={handleClick}
         />
-        <Cart products={products} currentSale={currentSale} />
+        <Cart
+          products={products}
+          currentSale={currentSale}
+          setCurrentSale={setCurrentSale}
+        />
       </section>
       <GlobalStyle />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </StyleApp>
   );
 }

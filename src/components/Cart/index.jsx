@@ -3,10 +3,12 @@ import { StyleCart } from "./style";
 import { CartProduct } from "./CartProduct";
 import { CartTotal } from "./CartTotal";
 
-const Cart = ({ products, currentSale, cartTotal }) => {
-  const cartProducts = products.filter((product) =>
-    currentSale.includes("" + product.id)
-  );
+const Cart = ({ products, currentSale, setCurrentSale }) => {
+  const cartProducts = products.filter((product) => {
+    if (currentSale.length > 0) {
+      return currentSale.includes("" + product.id);
+    }
+  });
   const cartValues = cartProducts.map((product) => {
     return product.price;
   });
@@ -24,11 +26,12 @@ const Cart = ({ products, currentSale, cartTotal }) => {
                   key={index}
                   product={product}
                   currentSale={currentSale}
+                  setCurrentSale={setCurrentSale}
                 />
               );
             })}
           </section>
-          <CartTotal cartValues={cartValues} />
+          <CartTotal cartValues={cartValues} setCurrentSale={setCurrentSale} />
         </div>
       ) : (
         <div className="emptyCart">

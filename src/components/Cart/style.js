@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const StyleCart = styled.div`
-  width: 365px;
+  min-width: 365px;
   height: fit-content;
+  margin-left: 10px;
 
   header {
     padding-top: 22px;
